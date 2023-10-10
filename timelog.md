@@ -1,26 +1,47 @@
 # Timelog
 
-* PROJECT NAME
-* YOUR NAME
-* STUDENT_ID
-* SUPERVISOR NAME
+* Cycling with the Hololens 2.
+* Cameron McDonald
+* 2570726M
+* Stephen Brewster
 
-## Guidance
+# Guidance
 
 * This file contains the time log for your project. It will be submitted along with your final dissertation.
 * **YOU MUST KEEP THIS UP TO DATE AND UNDER VERSION CONTROL.**
 * This timelog should be filled out honestly, regularly (daily) and accurately. It is for *your* benefit.
 * Follow the structure provided, grouping time by weeks.  Quantise time to the half hour.
 
-## Week 1
+# Week 1 - 18th September 2023
 
-### 19 Oct 2019
+# 19th September 2023
 
-* *4 hours* Read the project guidance notes
-* *0.5 hour* Created GitLab repository and cloned the cookiecutter for the projects
-* *1 hour* Modified dissertation template, compiled  
+* *4 hours* Read the project guidance notes.
 
-## 20 Oct 2019
+* *3 hours* Read paper sent to my by Stephen.
 
-* *1 hour* meeting with supervisor
-* *2 hours* writing initial version of test harness
+# 21st September 2023
+
+* *2 hours* Individual project lecture.
+
+# 22nd September 2023
+
+* *4 hours* Initialising git repository and conducting initial research.
+
+# 23rd September 2023
+
+* *2 hours* Research into current projects and solutions.
+
+# Week 2 - 25th September
+
+# 28th September 2023
+
+* *1 hour* Project meeting with Stephen.
+
+# Week 3 - 2nd October 2023
+
+# 3rd October 2023
+
+* *1 hour* Project meeting with Stephen.
+
+# Week 4 - 9th October 2023
