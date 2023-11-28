@@ -45,3 +45,11 @@
 * *1 hour* Project meeting with Stephen.
 
 # Week 4 - 9th October 2023
+
+# Week 5 - 16th October 2023
+
+# Week 6 - 23rd October 2023
+
+# 24th October 2023
+
+* *5 hours* Messing around with YOLO.
