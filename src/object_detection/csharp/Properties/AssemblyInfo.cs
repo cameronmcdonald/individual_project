@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Hello_ZED")]
+[assembly: AssemblyTitle("Camera_tracking")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Hello_ZED")]
+[assembly: AssemblyProduct("Camera_tracking")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("db8455c8-b2a9-4e62-9597-7b26c432a999")]
+[assembly: Guid("d9b40a17-9fb5-4644-a31e-2bfbd45cab5b")]
 
 // Version information for an assembly consists of the following four values:
 //

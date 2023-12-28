@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
-PROJECT(ZED_C_Tutorial_1)
+PROJECT(ZED_C_Tutorial_6)
 
 if(COMMAND cmake_policy)
 	cmake_policy(SET CMP0003 OLD)
