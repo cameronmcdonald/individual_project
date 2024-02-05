@@ -383,6 +383,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.MagicLeap.ref.dll"
 "Assets/ExampleAssets/Scripts/AnchorCreator.cs"
 "Assets/ExampleAssets/Scripts/ARFeatheredPlaneMeshVisualizer.cs"
+"Assets/Scripts/MyListener.cs"
 -langversion:9.0
 
 /deterministic
