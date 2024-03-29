@@ -1,6 +1,6 @@
 # Readme
 
-Put a brief description of your code here. This should at least describe the file structure.
+The code provided for this project handles the detection of vehicles, sending of coordinates and the moving of a 3d object based on the coordinates recieved over UDP.
 
 ## Build instructions
 
@@ -9,33 +9,21 @@ instructions to run automated tests.
 
 ### Requirements
 
-List the all of the pre-requisites software required to set up your project (e.g. compilers, packages, libraries, OS, hardware)
+* Python 2.7
+* Zed 2 SDK
 
-For example:
-
-* Python 3.7
-* Packages: listed in `requirements.txt` 
-* Tested on Windows 10
-
-or another example:
-
-* Requires Raspberry Pi 3 
-* a Linux host machine with the `arm-none-eabi` toolchain (at least version `x.xx`) installed
-* a working LuaJIT installation > 2.1.0
+* Unity Hub
+* Unity Editor
+* Mixed Reality Kit
+* Mized Reality Feature Tool
+* Windows SDK
 
 ### Build steps
 
-List the steps required to build software. 
+No building steps are required for the Python script for the Zed2. Simply download Zed SDK and run the scripts with the camera attached using USB.
 
-Hopefully something simple like `pip install -e .` or `make` or `cd build; cmake ..`. In
-some cases you may have much more involved setup required.
+For Unity, build settings must be configured as well as player settings. This varies heavily depending on version of Unity editor and platform however you want to choose all of the settings for universal windows platform.
 
-### Test steps
+Mixed reality tool kit must be imported, follow the download instructions.
 
-List steps needed to show your software works. This might be running a test suite, or just starting the program; but something that could be used to verify your code is working correctly.
-
-Examples:
-
-* Run automated tests by running `pytest`
-* Start the software by running `bin/editor.exe` and opening the file `examples/example_01.bin`
-
+Ensure the build target is setup for the HoloLens 2.

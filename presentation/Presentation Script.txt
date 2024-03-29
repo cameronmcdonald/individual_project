@@ -1,0 +1,192 @@
+Presentation Script
+
+Slide 1 - Welcome
+
+Hello and welcome to my presentation on my individual project for this year:
+
+CYCLIST-AUTONOMOUS VEHICLE INTERACTION: ENHANCING ROAD SAFETY THROUGH AN AUGMENTED REALITY PROTOTYPE
+
+
+Slide 2 - Introduction
+
+Everyday millions of people worldwide ride bicycles out on public roads.
+
+In order to keep themselves safe they rely upon certain social and implicit cues that drivers perform.
+
+Examples of these cues include eye contact, hand gestures and light flashes.
+
+However, the future is nearly upon us and with that comes the arrival of autonomous vehicles.
+
+With the removal of drivers, cyclists and vehicles lose the vital communication link that they had with one another.
+
+Cyclists will no longer be able to understand a vehicles intentions and can never be sure that the autonomous vehicle is aware of their presence.
+
+This gap in communication is what motivated this project, as if left unchecked it could have disastorous implications on road safety for everyone.
+
+
+Slide 3 - Background
+
+There are two studies that I have heavily drew upon for this project.
+
+'Keep it Real' written by several academics including my supervisor Stephen Brewster.
+
+And 'Light it Up' written by authors that wish to remain anonymous.
+
+
+'Keep it Real' aimed to look into the social and implicit cues given off by drivers in different scenarios where cyclists and drivers interact.
+
+The study also looked into cyclists gaze beheviour, on vehicles and road signs, in different scenarios on the road.
+
+Results consisted of some fantastic insight into how drivers currently show their intention to cyclists through the use of social and implicit cues.
+
+And also distribution data on the parts of vehicles and the road that cyclists fixated their vision onto.
+
+'Keep it Real' also detailed an interaction design that could potentially be leveraged in the future, my interaction design is heavily inspired by their suggestion.
+
+
+'Light it Up' was a study that investigated the effectives of External Human Machine Interfaces, as a replacement for traditional social signals displayed by the driver.
+
+Three External Human Machine Interfaces were trialed in two different studies in order to get feedback from participants on factors such as confidence of autonomus vehicles intent.
+
+The results the study recieved indicate a greater appreciation for the use of External Human Machine Interfaces than that of autonomous vehicles that did not use External Human Machine Interfaces.
+
+The results also indicated a preferred design out of the three interfaces, which helped to inform me on design choices I should make.
+
+
+Slide 4 - Requirements
+
+Having understood the problem and looked into prior research in the area, I could then make a list of requirements for the project.
+
+The project itself had to make use of an augmented reality headset, as that is the area of research.
+
+The prototype would encompass the displaying of an autonomous vehicles intention and the vehicles awareness of the cyclist.
+
+However, not included in this project is the actual sending of data between the autonomous vehicle and the augmented reality headset.
+
+Instead I would simply mock up the vehicles intention and awareness of the cyclist to demonstrate a prototype of what we could see in use in the near future.
+
+This decision was made due to the scope of the project, creating a communication means between an autonomous vehicle and a headset would be a large task and could be considered to be an entire project itself.
+
+Other requirements I set myself included the prototype needing to be comfortable for the cyclist to wear as well as not interefering with their safety whilst in use.
+
+
+Slide 5 - Design
+
+In order for the augmented reality headset to display a grahical overlay where a vehicle is positioned it must have real time data on where the vehicle currently is.
+
+For this to happen, some form of object detection was required and I therefore decided upon splitting the project into three different sections vehicle detection, data transmission and augmented reality.
+
+
+For the vehicle detection, we required a piece of software or hardware that was capable of identifying a vehicle in a live video feed.
+
+The crucial aspect of the vehicle detection was that it was required to be done in real time, any delay may cause potential safety issues.
+
+There are various options when it comes to approaches to object detection.
+
+The most popular approaches are to use deep learning object detection algorithms such as YOLO or R-CNN.
+
+These algorithms work by using convolutional neural networks, a network of layers with each layer specialising in detecting distinct features within an image.
+
+R-CNN is an example of a two-stage network, in this type of algorithm object detection is split into two distinct stages.
+
+Stage 1 is to identify subsets of an image that may contain an object.
+
+Stage 2 is to classify these objects with a label and a proposed region.
+
+Two-stage approaches to object detection tend to have higher accuracy when detecting objects, however they are usually slower than single stage networks.
+
+YOLO is an example of a single stage network.
+
+In single stage networks the CNN generates predictions for regions spanning the entire image by using anchor boxes.
+
+The predictions are then decoded by the algorithm to obtain the final bounding boxes for each of the objects.
+
+Single-stage networks are much faster but that comes at the cost of accuracy when comparing with two stage networks.
+
+As well as algorithms, there are also various pieces of hardware, mainly cameras, can perform object detection.
+
+
+For the data transmission aspect of the project, I required a way to transfer the coordinate data of the vehicles from the vehicle detection script to the augmented reality application.
+
+When considering this section of the project, two approaches were looked into, TCP and UDP.
+
+TCP, or the Transport Control Protocol, provides a reliable way to transport data by establishing a connection between a sender and a reciever.
+
+It also has measures in place for sequencing issues and the potential packet retransmission should data become lost.
+
+UDP, or the User Datagram Protocol, provides no reliability as it is a connectionless protocol to communicate over.
+
+It also has no measures for sequencing and packet loss issues.
+
+However, the added benefit of using UDP is a faster data transmission due to a lower overhead which is vital for this project.
+
+
+Finally, for the augmented reality section of the project the decision was made early on to use Unity as it is an easy and well documented way to develop applications for augmented reality headsets.
+
+The designs of the interactions were split into two sections, side designs and rear designs.
+
+In each section I developed two different designs.
+
+The first design just used colour to indicate the intention of the autonomous vehicle
+
+Red meaning that the autonomous vehicle intended to preserve its own right of way.
+
+Amber meaning that the right of way was still up for discussion.
+
+And Green meaning that the autonomous vehicles was going to uphold the cyclists right of way.
+
+The second design encompassed wording to provide a better understanding for cyclists.
+
+In the slide here are some of the designs used, the two on the left are the side view designs whilst the two on the right are the rear view designs.
+
+
+Slide 6 - Implementation
+
+To perform the object detection I eventually decided upon using a ZED 2 stereo camera, as seen in the slide here.
+
+The ZED 2 has various applications but most importantly for my project can perform object detection when ran with a Python script.
+
+The ZED SDK came with some example code for object detection and with some additions and edits made by myself the script was repurposed for this project.
+
+Inside this script I also setup the UDP connection by defining the Python script as the server.
+
+Inside Unity I created a CSharp script which acts as a UDP client and recieves coordinate data from the Python script.
+
+Once this data is recieved it is then reformatted into Unity's coordinate system and the coordinates of the 3D object the script is assigned to are updated.
+
+
+Slide 7 - Evaluation
+
+To evaluate my prototype I first performed testing on a stationary car in a car park to see if the prototype itself was running correctly.
+
+After recieving some positive results, I then move toward evaluating the prototype.
+
+To evaluate the prototype I wanted to recieve opinion on the design choices and overall opinion on augmented reality headset usage from cyclists.
+
+To do so I created an anoynomous survey and asked for preferences in design choices, results can be seen in this slide here.
+
+As well as asking about design preferences I also asked general questions around the topic of wearing augmented reality headsets during cycling.
+
+The results I recieved were fairly mixed.
+
+Supporters who were excited about the idea of technology usage to increase road safety had concerns about distraction, headset capbilities and cost.
+
+Whilst a significant amount of the respondents were against the idea of incorporating augmented reality technology into cyling.
+
+Those against the idea felt that it woud become another blaming tool if an accident was to occur.
+
+They also suggested that they thought creating entirely new cyclist infastructure with seperate roads for cyclists and vehicles would be a much safer option.
+
+Several cyclists made the point that autonomous vehicles should not be allowed on the road unless they were safe for everyone.
+
+
+Slide 8 - Conclusion
+
+In conclusion, I achieved the aims of the project by creating a working prototype that I tested and then performed evaluation on.
+
+To recap, the results I recieved were very mixed and I feel as though there is a definite need for further exploration of cyclist opinion.
+
+Future work may look into creating a protoype using YOLO which would remove the need for an external camera and make the project itself a slimmmer and sleeker design.
+
+
+
