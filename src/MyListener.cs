@@ -13,7 +13,7 @@ public class MyListener : MonoBehaviour
     void Start()
     {
         // Set up the UDP client to receive data
-        udpClient = new UdpClient(25001);  // Use the same port as in the Python script
+        udpClient = new UdpClient(25001);
         endPoint = new IPEndPoint(IPAddress.Any, 0);
     }
 

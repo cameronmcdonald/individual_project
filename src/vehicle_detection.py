@@ -19,10 +19,11 @@
 ########################################################################
 
 import pyzed.sl as sl
-import cv2
 import numpy as np
 import socket
 import struct
+
+# I added function to send data over UDP to Unity.
 
 def send_position_udp(position, udp_socket):
     packed_data = struct.pack('!ddd', position[0], position[1], position[2])
@@ -64,10 +65,15 @@ def main():
 
     objects = sl.Objects()
     obj_runtime_param = sl.ObjectDetectionRuntimeParameters()
+    # I changed threshold to 80% confidence.
     obj_runtime_param.detection_confidence_threshold = 80
 
+
+    # I added deinition of the UDP socket.
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+
+    # I added Try/Except with while statement and keyboard interupt in order to allow the script to run indefinetely. 
     try:
         while True:
             zed.grab()
@@ -77,16 +83,19 @@ def main():
                 print(str(len(obj_array))+" Object(s) detected\n")
                 if len(obj_array) > 0 :
                     object = obj_array[0]
-                    if repr(object.label) == 'Electronics':
+                    # I added If statement to remove uneccassary info from labels other 'Vehicle'.
+                    if repr(object.label) == 'Vehicle':
                         print("Object attributes:")
                         print(" Label '"+repr(object.label)+"' (conf. "+str(int(object.confidence))+"/100)")
                         if obj_param.enable_tracking :
                             print(" Tracking ID: "+str(int(object.id))+" tracking state: "+repr(object.tracking_state)+" / "+repr(object.action_state))
+                        
+                        # I added position definition and sending of position to sender function.
                         position = object.position
                         send_position_udp(position, udp_socket)
                         velocity = object.velocity
                         dimensions = object.dimensions
-                        print(" 3D position: [{0},{1},{2}]\n Velocity: [{3},{4},{5}]\n 3D dimentions: [{6},{7},{8}]".format(position[0],position[1],position[2],velocity[0],velocity[1],velocity[2],dimensions[0],dimensions[1],dimensions[2]))
+                        print(" 3D position: [{0},{1},{2}]\n Velocity: [{3},{4},{5}]\n 3D dimensions: [{6},{7},{8}]".format(position[0],position[1],position[2],velocity[0],velocity[1],velocity[2],dimensions[0],dimensions[1],dimensions[2]))
                         if object.mask.is_init():
                             print(" 2D mask available")
                         print(" Bounding Box 2D ")
